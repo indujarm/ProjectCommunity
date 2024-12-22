@@ -1,7 +1,7 @@
 package com.infosys.module3.controller;
 
 import com.infosys.module3.exception.Module3Exception;
-import com.infosys.module3.info.PostDto;
+import com.infosys.module3.info.PostInfo;
 import com.infosys.module3.model.Post;
 import com.infosys.module3.response.PostResponse;
 import com.infosys.module3.service.PostService;
@@ -18,8 +18,8 @@ public class PostController {
     PostService postService;
 
     @PostMapping("/addPostInfo")
-    public PostResponse addPostInfo(@RequestHeader("Authorization") String jwt, @RequestBody PostDto postDto) throws Module3Exception {
-        return postService.addPostInfo(postDto,jwt);
+    public PostResponse addPostInfo(@RequestHeader("Authorization") String jwt, @RequestBody PostInfo postInfo) throws Module3Exception {
+        return postService.addPostInfo(postInfo,jwt);
     }
 
     @GetMapping("/getPostList")
@@ -29,8 +29,8 @@ public class PostController {
     }
 
     @PutMapping("/editPost/{postId}")
-    public PostResponse editPost(@RequestHeader("Authorization") String jwt,@PathVariable Long postId,@RequestBody PostDto postDto) throws Module3Exception {
-        return postService.editPost(postDto,postId);
+    public PostResponse editPost(@RequestHeader("Authorization") String jwt,@PathVariable Long postId,@RequestBody PostInfo postInfo) throws Module3Exception {
+        return postService.editPost(postInfo,postId);
     }
 
     @DeleteMapping("/removePost/{postId}")

@@ -2,7 +2,7 @@ package com.infosys.module3.controller;
 
 
 import com.infosys.module3.exception.Module3Exception;
-import com.infosys.module3.info.EventDto;
+import com.infosys.module3.info.EventInfo;
 import com.infosys.module3.model.Event;
 import com.infosys.module3.response.EventResponse;
 import com.infosys.module3.service.EventService;
@@ -19,8 +19,8 @@ public class EventController {
     @Autowired
     EventService eventService;
     @PostMapping("/addEventInfo")
-    public EventResponse addEventInfo(@RequestHeader("Authorization") String jwt,@RequestBody EventDto eventDto) throws Module3Exception {
-        return eventService.addEventInfo(jwt, eventDto);
+    public EventResponse addEventInfo(@RequestHeader("Authorization") String jwt,@RequestBody EventInfo eventInfo) throws Module3Exception {
+        return eventService.addEventInfo(jwt, eventInfo);
     }
 
     @GetMapping("/getEventList")
@@ -29,8 +29,8 @@ public class EventController {
     }
 
     @PutMapping("editEvent/{eventId}")
-    public EventResponse editEvent(@RequestHeader("Authorization") String jwt,@RequestBody EventDto eventDto,@PathVariable Long eventId) throws Module3Exception {
-        return eventService.editEvent(eventId,eventDto);
+    public EventResponse editEvent(@RequestHeader("Authorization") String jwt, @RequestBody EventInfo eventInfo, @PathVariable Long eventId) throws Module3Exception {
+        return eventService.editEvent(eventId, eventInfo);
     }
 
     @DeleteMapping("/removeEvent/{eventId}")

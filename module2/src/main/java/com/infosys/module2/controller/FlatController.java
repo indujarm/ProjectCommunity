@@ -1,7 +1,7 @@
 package com.infosys.module2.controller;
 
 import com.infosys.module2.exception.Module2Exception;
-import com.infosys.module2.info.FlatDto;
+import com.infosys.module2.info.FlatInfo;
 import com.infosys.module2.model.Flat;
 import com.infosys.module2.service.FlatService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,13 +16,12 @@ public class FlatController {
     @Autowired
     FlatService flatService;
     @PostMapping("/addFlatInfo")
-    public Flat addFlatInfo(@RequestHeader("Authorization") String jwt,@RequestBody FlatDto flatDto){
+    public Flat addFlatInfo(@RequestHeader("Authorization") String jwt,@RequestBody FlatInfo flatInfo){
         Flat flat=new Flat();
-        flat.setFlatNo(flatDto.getFlatNo());
-        flat.setSocietyId(flatDto.getSocietyId());
+        flat.setFlatNo(flatInfo.getFlatNo());
+        flat.setSocietyId(flatInfo.getSocietyId());
         flat.setOccupied(false);
-        flat.setRent(flatDto.getRent());
-        System.out.println("Flat values"+flat);
+        flat.setRent(flatInfo.getRent());
         return flatService.addFlatInfo(flat);
     }
     @GetMapping("/getFlatList")

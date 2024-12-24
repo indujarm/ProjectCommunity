@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(name="module2")
 @Component
 public interface Module2Microservice {
-    @GetMapping("/api/get-admin")
+    @GetMapping("/api/getAdminDetails")
     public SocietyInfo getAdminDetails(@RequestHeader("Authorization") String jwt);
-    @GetMapping("/api/flatByFlatNo")
-    public FlatInfo getFlatByFlatNo(@RequestHeader("Authorization") String jwt, @RequestParam("flatNo") String flatNo);
+    @GetMapping("/api/getFlat")
+    public FlatInfo getFlat(@RequestHeader("Authorization") String jwt, @RequestParam("flatNo") String flatNo);
 }

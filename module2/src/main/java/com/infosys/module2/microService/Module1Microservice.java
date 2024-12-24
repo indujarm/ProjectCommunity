@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 @FeignClient(name="module1")
 @Component
 public interface Module1Microservice {
-    @GetMapping("/api/get-email")
+    @GetMapping("/api/getEmail")
     public String getEmailFromJWT(@RequestHeader("Authorization") String jwt);
 
 }

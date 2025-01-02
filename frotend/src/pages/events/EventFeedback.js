@@ -115,14 +115,7 @@ function EventFeedback() {
           </div>
         </div>
 
-        {/* Feedback Image */}
-        <div className="w-1/2">
-          <img
-            src="https://i.ibb.co/P1CtWcS/feedback-Image.png"
-            alt="Feedback"
-            className="w-[75%] float-right"
-          />
-        </div>
+        
       </div>
     </div>
   );

@@ -20,15 +20,15 @@ function makePayment() {
       const data = await response.data;
 
       var options = {
-        key: "rzp_test_Ypm4MexzscRQpH",
+        key: "rzp_test_K2Iic6N5ogMDDA",
         amount: data.amount,
         currency: "INR",
-        name: "USHA SRI PONAKA",
+        name: "INDUJA",
         description: "Monthly Maintenance Payment",
         order_id: data.razorpayId,
         prefill: {
-          name: "Usha Sri",
-          email: "usha@gmail.com",
+          name: "Induja",
+          email: "indujarm37@gmail.com",
         },
         theme: {
           color: "#339900",

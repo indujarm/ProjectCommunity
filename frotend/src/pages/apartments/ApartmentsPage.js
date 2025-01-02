@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Header from '../../components/header/Header'
 import ApartmentCard from './ApartmentCard'
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 function ApartmentsPage() {
     const [selectedBlock, setSelectedBlock] = useState("A");

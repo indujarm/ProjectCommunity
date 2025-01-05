@@ -10,9 +10,9 @@
         <module name="NoticeboardEventsPostService" />
         <module name="complaintandrequestservice" />
         <module name="BillingAndPaymentService" />
-        <module name="societymanagementservice" />
+        <module name="module1" />
         <module name="eureka" />
-        <module name="authentication" />
+        <module name="module2" />
       </profile>
     </annotationProcessing>
   </component>
@@ -20,10 +20,10 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="BillingAndPaymentService" options="-parameters" />
       <module name="NoticeboardEventsPostService" options="-parameters" />
-      <module name="authentication" options="-parameters" />
       <module name="complaintandrequestservice" options="-parameters" />
       <module name="eureka" options="-parameters" />
-      <module name="societymanagementservice" options="-parameters" />
+      <module name="module1" options="-parameters" />
+      <module name="module2" options="-parameters" />
     </option>
   </component>
 </project>
